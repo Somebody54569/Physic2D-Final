@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Launcher : MonoBehaviour
 {
+    public static Launcher instance;
+    
     [SerializeField] Transform projectilePrefab;
     [SerializeField] Transform spawnPoint;
     [SerializeField] LineRenderer lineRenderer;
@@ -12,18 +16,31 @@ public class Launcher : MonoBehaviour
     [SerializeField] private float trajectoryTimeStep = 0.05f;
     [SerializeField] private int trajectoryStepCount = 15;
 
-    [SerializeField] private int remainingBall = 2;
+    public TMP_Text ballText;
+
+    public int remainingBall = 2;
+    public bool isWin;
+    
+    private int maxBall = 1;
+    public int ballThrown = 0;
 
     private Vector2 velocity, startMousePos, currentMousePos;
 
+    private void Start()
+    {
+        instance = this;
+        UI.instance.updateText();
+        isWin = false;
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && remainingBall > 0)
+        if (Input.GetMouseButtonDown(0) && remainingBall > 0 && ballThrown < maxBall)
         { 
             startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }//click left button
             
-        if (Input.GetMouseButton(0) && remainingBall > 0) 
+        if (Input.GetMouseButton(0) && remainingBall > 0 && ballThrown < maxBall) 
         {
             currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             velocity = (startMousePos - currentMousePos) * launchForce;
@@ -32,13 +49,15 @@ public class Launcher : MonoBehaviour
             RotateLauncher();
         }//Hold left button
             
-        if (Input.GetMouseButtonUp(0) && remainingBall > 0)
+        if (Input.GetMouseButtonUp(0) && remainingBall > 0 && ballThrown < maxBall)
         {
             FireProjectile();
             ClearTrajectory();
             remainingBall--;
+            ballThrown++;
+            UI.instance.updateText();
         }//Release left button
-            
+        CheckHaveNoBall();
     }
 
     void DrawTrajectory() 
@@ -73,4 +92,13 @@ public class Launcher : MonoBehaviour
     {
         lineRenderer.positionCount = 0;
     }//Remove guide line
+
+    public void CheckHaveNoBall()
+    {
+        if (remainingBall == 0 && isWin == false && GameObject.FindGameObjectsWithTag("Ball").Length == 0)
+        {
+            UI.instance.youLose.SetActive(true);
+        }
+    }
+    
 }

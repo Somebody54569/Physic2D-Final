@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -23,12 +24,15 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            Destroy(this.gameObject,2f);
+            Destroy(this.gameObject,0.5f);
+            Launcher.instance.ballThrown = 0;
         }
         
         if (other.gameObject.CompareTag("Receiver"))
         {
             other.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            Launcher.instance.isWin = true;
+            UI.instance.youWin.SetActive(true);
         }
     }
 }
