@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Projectile : MonoBehaviour
 {
@@ -29,16 +30,24 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            Destroy(this.gameObject,0.5f);
+            Destroy(gameObject,0.5f);
             Launcher.instance.ballThrown = 0;
         }//Hit ground
         
         if (other.gameObject.CompareTag("Receiver"))
         {
             other.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            
+            Launcher.instance.ballThrown = 0;
             Launcher.instance.isWin = true;
-            UI.instance.youWin.SetActive(true);
+            
+            UI.instance.Win();
         }//Hit Receiver
-        
+
+        if (other.gameObject.CompareTag("Border"))
+        {
+            Destroy(gameObject);
+            Launcher.instance.ballThrown = 0;
+        }
     }
 }
