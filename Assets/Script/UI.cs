@@ -6,8 +6,10 @@ using UnityEngine;
 
 public class UI : MonoBehaviour
 {
-    public TMP_Text ballText;
     public static UI instance;
+    
+    public TMP_Text ballText;
+    public TMP_Text starText;
 
     public GameObject youWin;
     public GameObject youLose;
@@ -17,8 +19,9 @@ public class UI : MonoBehaviour
         instance = this;
     }
 
-    public void updateText()
+    public void UpdateText()
     {
         ballText.text = $"Ball Remaining : {Launcher.instance.remainingBall}";
+        starText.text = $"Star Get : {Launcher.instance.starGet}";
     }
 }

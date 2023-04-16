@@ -24,12 +24,14 @@ public class Launcher : MonoBehaviour
     private int maxBall = 1;
     public int ballThrown = 0;
 
+    public int starGet = 0;
+
     private Vector2 velocity, startMousePos, currentMousePos;
 
     private void Start()
     {
         instance = this;
-        UI.instance.updateText();
+        UI.instance.UpdateText();
         isWin = false;
     }
 
@@ -51,11 +53,12 @@ public class Launcher : MonoBehaviour
             
         if (Input.GetMouseButtonUp(0) && remainingBall > 0 && ballThrown < maxBall)
         {
+            
             FireProjectile();
             ClearTrajectory();
             remainingBall--;
             ballThrown++;
-            UI.instance.updateText();
+            UI.instance.UpdateText();
         }//Release left button
         CheckHaveNoBall();
     }
@@ -66,7 +69,7 @@ public class Launcher : MonoBehaviour
         for (int i = 0; i < trajectoryStepCount; i++)
         {
             float t = i * trajectoryTimeStep;
-            Vector3 pos = (Vector2)spawnPoint.position + velocity * t + 0.5f * Physics2D.gravity* t* t;
+            Vector3 pos = (Vector2)spawnPoint.position + velocity * t + 0.5f * Physics2D.gravity * t * t;
 
             position[i] = pos;
         }
@@ -99,6 +102,6 @@ public class Launcher : MonoBehaviour
         {
             UI.instance.youLose.SetActive(true);
         }
-    }
+    }//Check if there is no ball left and can't win
     
 }
