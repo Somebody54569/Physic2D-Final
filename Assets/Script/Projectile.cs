@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.CompareTag("Receiver"))
         {
             other.gameObject.GetComponent<Renderer>().material.color = Color.black;
-            
+            LevelManager.instance.UpdateHighestStarsForLevel(SceneManager.GetActiveScene().buildIndex, Launcher.instance.starGet);
             Launcher.instance.ballThrown = 0;
             Launcher.instance.isWin = true;
             
