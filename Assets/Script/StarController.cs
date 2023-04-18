@@ -17,7 +17,10 @@ public class StarController : MonoBehaviour
         if (other.gameObject.CompareTag("Ball"))
         {
             Destroy(gameObject);
-            Launcher.instance.starGet++;
+            if (Launcher.instance.isWin == false)
+            {
+                Launcher.instance.starGet++;
+            }
             UI.instance.UpdateText();
         }
     }
