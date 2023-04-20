@@ -71,4 +71,10 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadScene("End");
     }
+    
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
+    }
 }
