@@ -10,15 +10,18 @@ public class UI : MonoBehaviour
 {
     public static UI instance;
     
-    public TMP_Text ballText;
-    public TMP_Text starText;
+    public Text ballText;
+    public Text starText;
 
     public GameObject youWin;
-    public Image star1;
-    public Image star2;
-    public Image star3;
-    
+
     public GameObject youLose;
+
+    [SerializeField] private Image starImage;
+    [SerializeField] private Sprite star0;
+    [SerializeField] private Sprite star1;
+    [SerializeField] private Sprite star2;
+    [SerializeField] private Sprite star3;
 
     private void Start()
     {
@@ -36,20 +39,20 @@ public class UI : MonoBehaviour
         youWin.SetActive(true);
         switch (Launcher.instance.starGet)
         {
+            case 0:
+                starImage.sprite = star0;
+                break;
             case 1:
-                star1.color = Color.yellow;
+                starImage.sprite = star1;
                 break;
             case 2:
-                star1.color = Color.yellow;
-                star2.color = Color.yellow;
+                starImage.sprite = star2;
                 break;
             case 3:
-                star1.color = Color.yellow;
-                star2.color = Color.yellow;
-                star3.color = Color.yellow;
+                starImage.sprite = star3;
                 break;
+            
         }
-        
     }
 
     public void RestartLevel()
@@ -64,7 +67,8 @@ public class UI : MonoBehaviour
 
     public void ToStart()
     {
-        SceneManager.LoadScene("Start");
+        LevelManager.instance.ResetPlayThroughStars();
+        SceneManager.LoadScene("Menu");
     }
 
     public void ToResult()
@@ -75,6 +79,7 @@ public class UI : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f;
+        Launcher.instance.isPaused = true;
         SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
     }
 }

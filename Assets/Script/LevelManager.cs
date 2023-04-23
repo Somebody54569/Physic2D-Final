@@ -20,9 +20,12 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    public bool clearAll;
 
     // Array to store the highest number of stars obtained in each level
     public int[] highestStars = new int[3];
+    public int[] playThroughStars = new int[3];
 
     // Function to get the highest number of stars obtained for a given level
     public int GetHighestStarsForLevel(int levelIndex)
@@ -38,10 +41,20 @@ public class LevelManager : MonoBehaviour
             highestStars[levelIndex - 1] = stars;
         }
     }
+    
+    public void UpdatePlayThroughStarsForLevel(int levelIndex, int stars)
+    {
+        playThroughStars[levelIndex - 1] = stars;
+    }
 
     // Function to reset the highest number of stars obtained for all levels
     public void ResetHighestStars()
     {
         highestStars = new int[3];
+    }
+    
+    public void ResetPlayThroughStars()
+    {
+        playThroughStars = new int[3];
     }
 }

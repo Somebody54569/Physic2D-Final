@@ -38,9 +38,14 @@ public class Projectile : MonoBehaviour
         {
             other.gameObject.GetComponent<Renderer>().material.color = Color.black;
             LevelManager.instance.UpdateHighestStarsForLevel(SceneManager.GetActiveScene().buildIndex, Launcher.instance.starGet);
+            LevelManager.instance.UpdatePlayThroughStarsForLevel(SceneManager.GetActiveScene().buildIndex, Launcher.instance.starGet);
             Launcher.instance.ballThrown = 0;
             Launcher.instance.isWin = true;
-            
+            if (SceneManager.GetActiveScene().name == "Level 3")
+            {
+                LevelManager.instance.clearAll = true;
+            }
+
             UI.instance.Win();
         }//Hit Receiver
 

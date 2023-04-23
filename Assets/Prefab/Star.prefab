@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2060988914041707348}
   - component: {fileID: 6325231033986494849}
   - component: {fileID: 4305428770340375648}
-  - component: {fileID: 3618414053016806983}
   - component: {fileID: 6120149698283286378}
+  - component: {fileID: 7983876772478537663}
   m_Layer: 0
   m_Name: Star
   m_TagString: Star
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cae3fb56bab26f40b584dcf6aff83ae, type: 3}
   m_Color: {r: 1, g: 0.9783717, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,7 +108,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!60 &3618414053016806983
+--- !u!114 &6120149698283286378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766696174656000655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539bafdd095ece94a99f6ae39afed2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &7983876772478537663
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +136,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -133,19 +145,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
---- !u!114 &6120149698283286378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766696174656000655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539bafdd095ece94a99f6ae39afed2d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starCol: {fileID: 0}
+    - - {x: 0.3066604, y: -0.04082083}
+      - {x: 0.42375752, y: 0.06521699}
+      - {x: 0.43163028, y: 0.11516971}
+      - {x: 0.40900606, y: 0.1535754}
+      - {x: 0.16638176, y: 0.18154703}
+      - {x: 0.06774311, y: 0.39185312}
+      - {x: 0.01801205, y: 0.41879237}
+      - {x: -0.042624243, y: 0.401981}
+      - {x: -0.15139858, y: 0.18073268}
+      - {x: -0.32660013, y: 0.17797163}
+      - {x: -0.40524855, y: 0.14314136}
+      - {x: -0.41411325, y: 0.08639188}
+      - {x: -0.37439644, y: 0.02360811}
+      - {x: -0.24596909, y: -0.08131865}
+      - {x: -0.276071, y: -0.2655388}
+      - {x: -0.27801204, y: -0.31521696}
+      - {x: -0.24701805, y: -0.36758494}
+      - {x: -0.19068712, y: -0.36997974}
+      - {x: -0.11886671, y: -0.34236777}
+      - {x: 0.0011332855, y: -0.26352823}
+      - {x: 0.09288034, y: -0.315122}
+      - {x: 0.22447288, y: -0.37318844}
+      - {x: 0.2737575, y: -0.36758494}
+      - {x: 0.30375752, y: -0.3051697}
+      - {x: 0.25588477, y: -0.083188616}

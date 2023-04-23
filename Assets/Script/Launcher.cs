@@ -20,9 +20,10 @@ public class Launcher : MonoBehaviour
 
     public int remainingBall = 2;
     public bool isWin;
-    
+
     private int maxBall = 1;
     public int ballThrown = 0;
+    public bool isPaused;
 
     public int starGet = 0;
 
@@ -37,12 +38,12 @@ public class Launcher : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && remainingBall > 0 && ballThrown < maxBall)
+        if (Input.GetMouseButtonDown(0) && remainingBall > 0 && ballThrown < maxBall && !isPaused)
         { 
             startMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }//click left button
             
-        if (Input.GetMouseButton(0) && remainingBall > 0 && ballThrown < maxBall) 
+        if (Input.GetMouseButton(0) && remainingBall > 0 && ballThrown < maxBall && !isPaused) 
         {
             currentMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             velocity = (startMousePos - currentMousePos) * launchForce;
@@ -51,7 +52,7 @@ public class Launcher : MonoBehaviour
             RotateLauncher();
         }//Hold left button
             
-        if (Input.GetMouseButtonUp(0) && remainingBall > 0 && ballThrown < maxBall)
+        if (Input.GetMouseButtonUp(0) && remainingBall > 0 && ballThrown < maxBall && !isPaused)
         {
             
             FireProjectile();
@@ -61,6 +62,19 @@ public class Launcher : MonoBehaviour
             UI.instance.UpdateText();
         }//Release left button
         CheckHaveNoBall();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Pause.instance.Resume();
+            }
+            else
+            {
+                UI.instance.PauseGame();
+            }
+            
+        }
     }
 
     void DrawTrajectory() 

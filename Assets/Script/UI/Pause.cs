@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
+    public static Pause instance;
     private void Start()
     {
+        instance = this;
         EventSystem[] eventSystems = FindObjectsOfType<EventSystem>();
         if (eventSystems.Length > 1)
         {
@@ -20,23 +22,32 @@ public class Pause : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
+        Launcher.instance.isPaused = false;
         SceneManager.UnloadSceneAsync("Pause");
     }
 
     public void LoadMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Start");
+        LevelManager.instance.ResetPlayThroughStars();
+        SceneManager.LoadScene("Menu");
     }
     
     public void LoadLevel()
     {
         Time.timeScale = 1;
+        LevelManager.instance.ResetPlayThroughStars();
         SceneManager.LoadScene("Level Select");
     }
     public void Quit()
     {
         Debug.Log("Quit Game");
         Application.Quit();
+    }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

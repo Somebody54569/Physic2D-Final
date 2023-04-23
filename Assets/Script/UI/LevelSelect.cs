@@ -20,38 +20,56 @@ public class LevelSelect : MonoBehaviour
     {
         switch (LevelManager.instance.highestStars[0])
         {
+            case 0:
+                level1.gameObject.SetActive(false);
+                break;
             case 1:
+                level1.gameObject.SetActive(true);
                 level1.sprite = star1;
                 break;
             case 2:
+                level1.gameObject.SetActive(true);
                 level1.sprite = star2;
                 break;
             case 3:
+                level1.gameObject.SetActive(true);
                 level1.sprite = star3;
                 break;
         }
         
         switch (LevelManager.instance.highestStars[1])
         {
+            case 0:
+                level2.gameObject.SetActive(false);
+                break;
             case 1:
+                level2.gameObject.SetActive(true);
                 level2.sprite = star1;
                 break;
             case 2:
+                level2.gameObject.SetActive(true);
                 level2.sprite = star2;
                 break;
             case 3:
+                level2.gameObject.SetActive(true);
                 level2.sprite = star3;
                 break;
         }
         switch (LevelManager.instance.highestStars[2])
         {
+            case 0:
+                level3.gameObject.SetActive(false);
+                break;
             case 1:
+                level3.gameObject.SetActive(true);
                 level3.sprite = star1;
                 break;
             case 2:
+                level3.gameObject.SetActive(true);
                 level3.sprite = star2;
                 break;
             case 3:
+                level3.gameObject.SetActive(true);
                 level3.sprite = star3;
                 break;
         }
@@ -59,16 +77,24 @@ public class LevelSelect : MonoBehaviour
 
     public void LoadLevel1()
     {
+        LevelManager.instance.ResetPlayThroughStars();
         SceneManager.LoadScene("Level 1");
     }
     
     public void LoadLevel2()
     {
+        LevelManager.instance.ResetPlayThroughStars();
         SceneManager.LoadScene("Level 2");
     }
     
     public void LoadLevel3()
     {
+        LevelManager.instance.ResetPlayThroughStars();
         SceneManager.LoadScene("Level 3");
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
