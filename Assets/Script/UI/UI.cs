@@ -57,22 +57,26 @@ public class UI : MonoBehaviour
 
     public void RestartLevel()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void NextLevel()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ToStart()
     {
         LevelManager.instance.ResetPlayThroughStars();
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Menu");
     }
 
     public void ToResult()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("End");
     }
     
@@ -80,6 +84,7 @@ public class UI : MonoBehaviour
     {
         Time.timeScale = 0f;
         Launcher.instance.isPaused = true;
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Pause", LoadSceneMode.Additive);
     }
 }

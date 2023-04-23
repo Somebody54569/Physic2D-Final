@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,16 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance = null;
 
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource SFXSource;
     
-    [SerializeField] private AudioClip startSong;
+    public AudioClip background;
+    public AudioClip throwBall;
+    public AudioClip bonk;
+    public AudioClip starSound;
+    public AudioClip buttonPress;
+    public AudioClip cheeringSound;
+    public AudioClip failSound;
     
     private void Awake()
     {
@@ -31,14 +39,13 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(audioListeners[1].gameObject);
         }
-
-        audioSource = GetComponent<AudioSource>();
-        PlaySound(startSong);
+        
+        musicSource.clip = background;
+        musicSource.Play();
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySFX(AudioClip clip)
     {
-        audioSource.clip = clip;
-        audioSource.Play();
+        SFXSource.PlayOneShot(clip);
     }
 }

@@ -35,17 +35,21 @@ public class StartSceneUI : MonoBehaviour
     public void StartGame()
     {
         LevelManager.instance.ResetPlayThroughStars();
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Level 1");
+        
     }
 
     public void QuitGame()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         Application.Quit();
         Debug.Log("Quit Game");
     }
 
     public void LevelSelect()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Level Select");
     }
     
@@ -54,11 +58,13 @@ public class StartSceneUI : MonoBehaviour
         if (!onSetting)
         {
             onSetting = true;
+            AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
             SceneManager.LoadScene("Setting", LoadSceneMode.Additive);
         }
         else
         {
             onSetting = false;
+            AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
             SceneManager.UnloadSceneAsync("Setting");
         }
     }
@@ -66,6 +72,7 @@ public class StartSceneUI : MonoBehaviour
     public void ResetHighScore()
     {
         LevelManager.instance.ResetHighestStars();
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         PlayerPrefs.SetInt("HighestStars",0);
     }
 }

@@ -30,23 +30,26 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            Destroy(gameObject,0.5f);
+            Destroy(gameObject,0.2f);
             Launcher.instance.ballThrown = 0;
         }//Hit ground
         
         if (other.gameObject.CompareTag("Receiver"))
         {
             other.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            AudioManager.instance.PlaySFX(AudioManager.instance.bonk);
             LevelManager.instance.UpdateHighestStarsForLevel(SceneManager.GetActiveScene().buildIndex, Launcher.instance.starGet);
             LevelManager.instance.UpdatePlayThroughStarsForLevel(SceneManager.GetActiveScene().buildIndex, Launcher.instance.starGet);
             Launcher.instance.ballThrown = 0;
             Launcher.instance.isWin = true;
             if (SceneManager.GetActiveScene().name == "Level 3")
             {
+                AudioManager.instance.PlaySFX(AudioManager.instance.cheeringSound);
                 LevelManager.instance.clearAll = true;
             }
 
             UI.instance.Win();
+            Destroy(gameObject);
         }//Hit Receiver
 
         if (other.gameObject.CompareTag("Border"))

@@ -78,23 +78,27 @@ public class LevelSelect : MonoBehaviour
     public void LoadLevel1()
     {
         LevelManager.instance.ResetPlayThroughStars();
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Level 1");
     }
     
     public void LoadLevel2()
     {
         LevelManager.instance.ResetPlayThroughStars();
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Level 2");
     }
     
     public void LoadLevel3()
     {
         LevelManager.instance.ResetPlayThroughStars();
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Level 3");
     }
 
     public void LoadMenu()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Menu");
     }
 }

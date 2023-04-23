@@ -9,6 +9,7 @@ public class Setting : MonoBehaviour
     public void Resume()
     {
         StartSceneUI.instance.onSetting = false;
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.UnloadSceneAsync("Setting");
     }
 }

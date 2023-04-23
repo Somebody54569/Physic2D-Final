@@ -60,6 +60,7 @@ public class Launcher : MonoBehaviour
             remainingBall--;
             ballThrown++;
             UI.instance.UpdateText();
+            AudioManager.instance.PlaySFX(AudioManager.instance.throwBall);
         }//Release left button
         CheckHaveNoBall();
 
@@ -68,10 +69,12 @@ public class Launcher : MonoBehaviour
             if (isPaused)
             {
                 Pause.instance.Resume();
+                AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
             }
             else
             {
                 UI.instance.PauseGame();
+                AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
             }
             
         }
@@ -115,6 +118,7 @@ public class Launcher : MonoBehaviour
         if (remainingBall == 0 && isWin == false && GameObject.FindGameObjectsWithTag("Ball").Length == 0)
         {
             UI.instance.youLose.SetActive(true);
+            AudioManager.instance.PlaySFX(AudioManager.instance.failSound);
         }
     }//Check if there is no ball left and can't win
     

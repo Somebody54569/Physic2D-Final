@@ -23,6 +23,7 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1;
         Launcher.instance.isPaused = false;
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.UnloadSceneAsync("Pause");
     }
 
@@ -30,6 +31,7 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1;
         LevelManager.instance.ResetPlayThroughStars();
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Menu");
     }
     
@@ -37,10 +39,12 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1;
         LevelManager.instance.ResetPlayThroughStars();
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene("Level Select");
     }
     public void Quit()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         Debug.Log("Quit Game");
         Application.Quit();
     }
@@ -48,6 +52,7 @@ public class Pause : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1;
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

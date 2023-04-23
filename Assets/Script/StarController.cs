@@ -17,6 +17,7 @@ public class StarController : MonoBehaviour
         if (other.gameObject.CompareTag("Ball"))
         {
             Destroy(gameObject);
+            AudioManager.instance.PlaySFX(AudioManager.instance.starSound);
             if (Launcher.instance.isWin == false)
             {
                 Launcher.instance.starGet++;
