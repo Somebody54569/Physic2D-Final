@@ -9,12 +9,7 @@ public class LevelSelect : MonoBehaviour
     public Sprite star1, star2, star3;
 
     public Image level1, level2, level3;
-    // Start is called before the first frame update
-    void Start()
-    {
-          
-    }
-
+    
     // Update is called once per frame
     void Update()
     {

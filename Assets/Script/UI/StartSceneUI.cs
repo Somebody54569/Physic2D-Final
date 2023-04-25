@@ -75,4 +75,10 @@ public class StartSceneUI : MonoBehaviour
         AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
         PlayerPrefs.SetInt("HighestStars",0);
     }
+
+    public void LoadCredit()
+    {
+        AudioManager.instance.PlaySFX(AudioManager.instance.buttonPress);
+        SceneManager.LoadScene("Credit");
+    }
 }
