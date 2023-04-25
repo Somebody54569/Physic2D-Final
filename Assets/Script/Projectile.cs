@@ -9,7 +9,8 @@ public class Projectile : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Collider2D ballCol;
-    public static Projectile instance; 
+    public static Projectile instance;
+    public Sprite afterHit;
 
     private void Start()
     {
@@ -36,7 +37,7 @@ public class Projectile : MonoBehaviour
         
         if (other.gameObject.CompareTag("Receiver"))
         {
-            other.gameObject.GetComponent<Renderer>().material.color = Color.black;
+            other.gameObject.GetComponent<SpriteRenderer>().sprite = afterHit;
             AudioManager.instance.PlaySFX(AudioManager.instance.bonk);
             LevelManager.instance.UpdateHighestStarsForLevel(SceneManager.GetActiveScene().buildIndex, Launcher.instance.starGet);
             LevelManager.instance.UpdatePlayThroughStarsForLevel(SceneManager.GetActiveScene().buildIndex, Launcher.instance.starGet);

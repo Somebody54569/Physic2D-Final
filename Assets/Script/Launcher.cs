@@ -15,9 +15,7 @@ public class Launcher : MonoBehaviour
     [SerializeField] private float launchForce = 1.5f;
     [SerializeField] private float trajectoryTimeStep = 0.05f;
     [SerializeField] private int trajectoryStepCount = 15;
-
-    public TMP_Text ballText;
-
+    
     public int remainingBall = 2;
     public bool isWin;
 
