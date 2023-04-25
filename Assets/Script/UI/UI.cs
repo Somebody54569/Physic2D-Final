@@ -14,7 +14,6 @@ public class UI : MonoBehaviour
     public Text starText;
 
     public GameObject youWin;
-
     public GameObject youLose;
 
     [SerializeField] private Image starImage;
