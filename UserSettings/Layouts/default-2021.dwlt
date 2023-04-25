@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 26
+  controlID: 50
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 27
+  controlID: 51
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 363
     height: 645
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -579,23 +579,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 704c0100
-      m_LastClickedID: 85104
-      m_ExpandedIDs: e42cffff3833ffff4237ffffe838ffff3a3effffe440ffffd043ffff544effff1852ffff9a55ffff3456fffffa57ffffc458ffff565dffff2061ffffe46effff9a6fffff6872ffff0673ffff9275ffffe475ffff6276ffffa476ffff567fffffa87fffff4e80ffff9c80ffff0e82ffffd488ffff2a89ffffd089ffff188affff028bffffd88bffff6abbffff7ebcffff92bdffffecbdffff2cbeffff6ebeffff00bfffffe4bfffff24c0ffff64c0ffffbcc0fffffcc0ffff40c1ffff9ec1fffffac1ffffc6c5ffffacc8ffff48ccffffb4ebfffff4eeffff9aefffffd2efffff3af1ffff44f1ffff62f1ffff80f1ffffdcf1ffff2af2ffff70f2ffff8cf2ffffd2f9ffff2afbffffa26000008461000084a30000a2be0000aec10000e6c10000a2c5000084c60000acc60000e8c7000020c8000058c9000062c90000dcca000014cb000066cc000032cd0000b8cd0000f2ce00002acf000022d50000b4d70000bed700003ad800000cd9000090d9000060eb00005a11010000120100041201009812010032140100b0140100b414010006150100821601004c1701006e170100ea170100e436010010370100704c0100
+      m_SelectedIDs: 781f0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Canvas
-        m_OriginalName: Canvas
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 85104
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 899.6592, y: 512.969, z: 3.662403}
     speed: 2
-    m_Value: {x: 902.99817, y: 520.8872, z: 3.3771577}
+    m_Value: {x: 899.6592, y: 512.969, z: 3.662403}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -941,7 +941,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 605.3549
     speed: 2
-    m_Value: 633.8795
+    m_Value: 605.3549
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1008,22 +1008,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/Main
+    - Assets/Script
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes/Main
+  - Assets/Script
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "D:\\Study\\\u0E1B\u0E35 2\\\u0E40\u0E17\u0E2D\u0E212\\To git\\Physic2D-Final"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 3}
-    m_SelectedIDs: 6a600000
-    m_LastClickedID: 24682
-    m_ExpandedIDs: 000000000660000036600000386000003a60000000ca9a3bffffff7f
+    m_SelectedIDs: b45f0000
+    m_LastClickedID: 24500
+    m_ExpandedIDs: 00000000965f0000b25f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1051,7 +1051,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000006600000
+    m_ExpandedIDs: 00000000965f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
