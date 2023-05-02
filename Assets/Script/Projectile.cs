@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class Projectile : MonoBehaviour
 {
+    public static Projectile instance;
+    
     private Rigidbody2D rb;
     private Collider2D ballCol;
-    public static Projectile instance;
+    
     public Sprite afterHit;
 
     private void Start()
@@ -57,6 +59,6 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
             Launcher.instance.ballThrown = 0;
-        }
+        }//Hit Border
     }
 }

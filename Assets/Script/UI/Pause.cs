@@ -15,7 +15,7 @@ public class Pause : MonoBehaviour
         if (eventSystems.Length > 1)
         {
             Destroy(eventSystems[1].gameObject);
-        }
+        }//check if more than 1 eventSystem
         
     }
 

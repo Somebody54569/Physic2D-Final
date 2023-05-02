@@ -27,34 +27,34 @@ public class LevelManager : MonoBehaviour
     public int[] highestStars = new int[3];
     public int[] playThroughStars = new int[3];
 
-    // Function to get the highest number of stars obtained for a given level
+    
     public int GetHighestStarsForLevel(int levelIndex)
     {
         return highestStars[levelIndex - 1];
-    }
+    }// Function to get the highest number of stars obtained for a given level
 
-    // Function to update the highest number of stars obtained for a given level
+    
     public void UpdateHighestStarsForLevel(int levelIndex, int stars)
     {
         if (stars > highestStars[levelIndex - 1])
         {
             highestStars[levelIndex - 1] = stars;
         }
-    }
+    }// Function to update the highest number of stars obtained for a given level
     
     public void UpdatePlayThroughStarsForLevel(int levelIndex, int stars)
     {
         playThroughStars[levelIndex - 1] = stars;
-    }
+    }// Function to update the number of stars obtained for a given level
 
-    // Function to reset the highest number of stars obtained for all levels
+    
     public void ResetHighestStars()
     {
         highestStars = new int[3];
-    }
+    }// Function to reset the highest number of stars obtained for all levels
     
     public void ResetPlayThroughStars()
     {
         playThroughStars = new int[3];
-    }
+    }// Function to reset the number of stars obtained for all levels
 }

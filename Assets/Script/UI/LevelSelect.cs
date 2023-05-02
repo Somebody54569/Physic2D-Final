@@ -30,7 +30,7 @@ public class LevelSelect : MonoBehaviour
                 level1.gameObject.SetActive(true);
                 level1.sprite = star3;
                 break;
-        }
+        }//Level 1 Highest star
         
         switch (LevelManager.instance.highestStars[1])
         {
@@ -49,7 +49,8 @@ public class LevelSelect : MonoBehaviour
                 level2.gameObject.SetActive(true);
                 level2.sprite = star3;
                 break;
-        }
+        }//Level 2 Highest star
+        
         switch (LevelManager.instance.highestStars[2])
         {
             case 0:
@@ -67,7 +68,7 @@ public class LevelSelect : MonoBehaviour
                 level3.gameObject.SetActive(true);
                 level3.sprite = star3;
                 break;
-        }
+        }//Level 3 Highest star
     }
 
     public void LoadLevel1()

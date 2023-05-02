@@ -20,7 +20,7 @@ public class VolumeSetting : MonoBehaviour
       {
          SetMusicVolume();
          SetSFXVolume();
-      }
+      }//check if player set volume before
    }
 
    public void SetMusicVolume()
@@ -28,14 +28,14 @@ public class VolumeSetting : MonoBehaviour
       float volume = musicSlider.value;
       mixer.SetFloat("music", Mathf.Log10(volume) * 20);
       PlayerPrefs.SetFloat("musicVolume", volume);
-   }
+   }// Set Music Volume
    
    public void SetSFXVolume()
    {
       float volume = SFXSlider.value;
       mixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
       PlayerPrefs.SetFloat("SFXVolume", volume);
-   }
+   }// Set SFX volume
 
    void LoadVolume()
    {
@@ -44,5 +44,5 @@ public class VolumeSetting : MonoBehaviour
       
       SetMusicVolume();
       SetSFXVolume();
-   }
+   }// Get player previous volume setting
 }

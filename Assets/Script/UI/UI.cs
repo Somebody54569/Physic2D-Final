@@ -52,7 +52,7 @@ public class UI : MonoBehaviour
                 break;
             
         }
-    }
+    }//Win panel appear
 
     public void RestartLevel()
     {
